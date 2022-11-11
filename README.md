@@ -7,7 +7,7 @@ The most simple, small, and fast terminal color text library.
 
 ## Why?
 
-Here is a flamegraph of the [auto-clock-speed](https://github.com/JakeRoggenbuck/auto-clock-speed) project. In green is the time it takes for colored text to render.
+Here is a flamegraph of the [auto-clock-speed](https://github.com/JakeRoggenbuck/auto-clock-speed) project. In green is the time it takes for colored text to render. That is just over 9% of runtime cpu is taken by color formatting.
 
 ![image](https://user-images.githubusercontent.com/35516367/201438554-a3c7bd63-2810-4140-a457-da8eff267d21.png)
 
