@@ -4,6 +4,9 @@ version = "0.1.0"
 edition = "2021"
 license = "MIT"
 exclude = ["/test-efcl"]
+repository = "https://github.com/JakeRoggenbuck/efcl"
+homepage = "https://github.com/JakeRoggenbuck/efcl"
+description = "The most simple, small, and fast terminal color text library."
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
