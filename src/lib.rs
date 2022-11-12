@@ -13,14 +13,16 @@ pub enum Color {
 #[macro_export]
 macro_rules! color {
     ($a:expr, $b:expr) => {{
-        format!("\x1B[{}m{}\x1B[0m", $a as u8, $b)
+        let number = $a as u8;
+        let num_str = number.to_string();
+        "\x1B[".to_owned() + &num_str.to_owned() + "m" + $b + "\x1B[0m"
     }};
 }
 
 #[macro_export]
 macro_rules! bold {
     ($a:expr) => {{
-        format!("\x1B[1m{}\x1B[0m", $b)
+        "\x1B[1m".to_owned() + $a + "\x1B[0m"
     }};
 }
 
@@ -34,5 +36,10 @@ mod tests {
             color!(Color::RED, "This is RED!!"),
             "\x1B[31mThis is RED!!\x1B[0m"
         );
+    }
+
+    #[test]
+    fn bold_macro_test() {
+        assert_eq!(bold!("This is BOLD!!"), "\x1B[1mThis is BOLD!!\x1B[0m");
     }
 }
