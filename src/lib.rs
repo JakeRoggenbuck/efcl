@@ -10,12 +10,25 @@ pub enum Color {
     LIGHTGRAY = 37,
 }
 
+impl Color {
+    pub fn as_str(&self) -> &'static str {
+        match self {
+            Color::BLACK => "30",
+            Color::RED => "31",
+            Color::GREEN => "32",
+            Color::YELLOW => "33",
+            Color::BLUE => "34",
+            Color::PURPLE => "35",
+            Color::CYAN => "36",
+            Color::LIGHTGRAY => "37",
+        }
+    }
+}
+
 #[macro_export]
 macro_rules! color {
     ($a:expr, $b:expr) => {{
-        let number = $a as u8;
-        let num_str = number.to_string();
-        "\x1B[".to_owned() + &num_str.to_owned() + "m" + $b + "\x1B[0m"
+        "\x1B[".to_owned() + $a.as_str() + "m" + $b + "\x1B[0m"
     }};
 }
 
