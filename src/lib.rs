@@ -54,5 +54,7 @@ mod tests {
     #[test]
     fn bold_macro_test() {
         assert_eq!(bold!("This is BOLD!!"), "\x1B[1mThis is BOLD!!\x1B[0m");
+
+        bold!(&color!(Color::RED, "Hello"));
     }
 }
