@@ -1,4 +1,10 @@
 # Efficiency First Color Library (EFCL)
+
+[![Rust](https://img.shields.io/github/actions/workflow/status/jakeroggenbuck/efcl/rust.yml?branch=main&style=for-the-badge)](https://github.com/JakeRoggenbuck/efcl/actions)
+[![Crates Version](https://img.shields.io/crates/v/efcl?style=for-the-badge)](https://crates.io/crates/efcl)
+[![Downloads](https://img.shields.io/crates/d/efcl?style=for-the-badge)](https://crates.io/crates/efcl)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/jakeroggenbuck/efcl?style=for-the-badge)
+
 The most simple, small, and fast terminal color text library.
 
 ## Priorities
