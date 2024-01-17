@@ -11,6 +11,21 @@ The most simple, small, and fast terminal color text library.
 - Runtime speed
 - Dependency size
 
+## Quickstart
+
+```toml
+efcl = "0.1.2"
+```
+
+```rs
+use efcl::{color, Color, bold};
+
+fn main() {
+    println!("{}!", bold!(&color!(Color::RED, "EFCL").to_string()));
+    println!("Hello, {}!", color!(Color::BLUE, "world"));
+}
+```
+
 ## Why?
 
 Here is a flamegraph of the [auto-clock-speed](https://github.com/JakeRoggenbuck/auto-clock-speed) project. In green is the time it takes for colored text to render. That is just over 9% of runtime cpu is taken by color formatting.
