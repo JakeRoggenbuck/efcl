@@ -45,6 +45,8 @@ impl Color {
 /// # Examples
 ///
 /// ```
+/// use efcl::{color, Color};
+///
 /// let red_text: String = color!(Color::RED, "This is RED!!");
 /// ```
 #[macro_export]
@@ -59,6 +61,8 @@ macro_rules! color {
 /// # Examples
 ///
 /// ```
+/// use efcl::bold;
+///
 /// let bold_text: String = bold!("This is BOLD!!");
 /// ```
 #[macro_export]
