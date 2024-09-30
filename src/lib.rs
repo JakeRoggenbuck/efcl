@@ -1,3 +1,18 @@
+//! EFCL - Efficiency First Color Library
+//!
+//! The most simple, small, and fast terminal color text library.
+//!
+//! ```
+//! use efcl::{color, Color, bold};
+//!
+//! fn main() {
+//!     println!("Hello, {}!", color!(Color::BLUE, "world"));
+//!
+//!     println!("{}!", bold!(&color!(Color::RED, "EFCL").to_string()));
+//! }
+//! ```
+
+/// Color is an enum that represents the ANSI escape code for terminal colors
 #[derive(Copy, Clone)]
 pub enum Color {
     BLACK = 30,
@@ -25,6 +40,15 @@ impl Color {
     }
 }
 
+/// Return a String with a Color added to it
+///
+/// # Examples
+///
+/// ```
+/// use efcl::{color, Color};
+///
+/// let red_text: String = color!(Color::RED, "This is RED!!");
+/// ```
 #[macro_export]
 macro_rules! color {
     ($a:expr, $b:expr) => {{
@@ -32,6 +56,15 @@ macro_rules! color {
     }};
 }
 
+/// Return a String that is bold
+///
+/// # Examples
+///
+/// ```
+/// use efcl::bold;
+///
+/// let bold_text: String = bold!("This is BOLD!!");
+/// ```
 #[macro_export]
 macro_rules! bold {
     ($a:expr) => {{
@@ -45,16 +78,18 @@ mod tests {
 
     #[test]
     fn color_macro_test() {
-        assert_eq!(
-            color!(Color::RED, "This is RED!!"),
-            "\x1B[31mThis is RED!!\x1B[0m"
-        );
+        let c: String = color!(Color::RED, "This is RED!!");
+        assert_eq!(c, "\x1B[31mThis is RED!!\x1B[0m");
     }
 
     #[test]
     fn bold_macro_test() {
-        assert_eq!(bold!("This is BOLD!!"), "\x1B[1mThis is BOLD!!\x1B[0m");
+        let bold_text: String = bold!("This is BOLD!!");
+        assert_eq!(bold_text, "\x1B[1mThis is BOLD!!\x1B[0m");
 
-        bold!(&color!(Color::RED, "Hello"));
+        assert_eq!(
+            bold!(&color!(Color::RED, "Hello")),
+            "\u{1b}[1m\u{1b}[31mHello\u{1b}[0m\u{1b}[0m"
+        );
     }
 }
