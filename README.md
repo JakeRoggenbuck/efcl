@@ -21,8 +21,9 @@ efcl = "0.1.2"
 use efcl::{color, Color, bold};
 
 fn main() {
-    println!("{}!", bold!(&color!(Color::RED, "EFCL").to_string()));
     println!("Hello, {}!", color!(Color::BLUE, "world"));
+
+    println!("{}!", bold!(&color!(Color::RED, "EFCL").to_string()));
 }
 ```
 
