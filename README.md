@@ -14,7 +14,7 @@ The most simple, small, and fast terminal color text library.
 ## Quickstart
 
 ```toml
-efcl = "0.1.2"
+efcl = "0.1.3"
 ```
 
 ```rs
