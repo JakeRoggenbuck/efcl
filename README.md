@@ -27,6 +27,8 @@ fn main() {
 }
 ```
 
+![image](https://github.com/user-attachments/assets/01c3f978-cd49-42df-b06b-9abcd40be5c5)
+
 ## Why?
 
 Here is a flamegraph of the [auto-clock-speed](https://github.com/JakeRoggenbuck/auto-clock-speed) project. In green is the time it takes for colored text to render. That is just over 9% of runtime cpu is taken by color formatting.
